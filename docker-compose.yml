@@ -33,4 +33,12 @@ services:
       - BOOTSTRAP_SERVERS=kafka:9092
     ports:
       - "8083:8083"
-      
+  watcher:
+    image: debezium/kafka
+    environment:
+      #KAFKA_ADVERTISED_HOST_NAME: 192.168.99.100
+      ZOOKEEPER_CONNECT: zookeeper:2181
+    command: ["watch-topic", "-a", "-k", "dbserver1.inventory.customers"] 
+  test:
+    image: python:3
+    command: ["/bin/bash"]
