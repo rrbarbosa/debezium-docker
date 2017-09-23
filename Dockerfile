@@ -1,7 +1,10 @@
 FROM python:3
 
-ADD . /code
-WORKDIR /code
+ADD ./requirements.txt /
 RUN pip install -r requirements.txt
 
-CMD ["/bin/bash"]
+ADD ./test /code
+WORKDIR /code
+
+ENTRYPOINT ["python"]
+CMD ["consumer.py"]
