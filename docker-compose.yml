@@ -40,5 +40,5 @@ services:
       ZOOKEEPER_CONNECT: zookeeper:2181
     command: ["watch-topic", "-a", "-k", "dbserver1.inventory.customers"] 
   test:
-    image: python:3
-    command: ["/bin/bash"]
+    build: .
+    command: ["ipython"]

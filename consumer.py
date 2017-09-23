@@ -7,6 +7,6 @@ consumer = KafkaConsumer(bootstrap_servers="kafka",
                          auto_offset_reset='earliest')
 consumer.subscribe(['dbserver1.inventory.customers'])
 m = next(consumer)
-json.loads(m)
-json.loads(m.key)
-json.loads(m.value)
+
+print(json.loads(m.key))
+print(json.loads(m.value))
