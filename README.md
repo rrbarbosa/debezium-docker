@@ -1,6 +1,6 @@
 # debezium-docker
 
-Playground for Debezium. Following the steps from the [tutorial](http://debezium.io/docs/tutorial/), wrapping it all in docker-compose and (hopefully soon) adding python-base test case.
+Playground for Debezium. Following the steps from the [tutorial](http://debezium.io/docs/tutorial/), wrapping it all in docker-compose and  adding python-based app as a demo.
 
 # Steps
 
@@ -15,6 +15,6 @@ Playground for Debezium. Following the steps from the [tutorial](http://debezium
 
 	# boot up testing cotainer
 	docker-compose run test
-	# ...start a flask app on localhost:5000
+	# ...starts a flask app on localhost:5000
 
-Every time an GET is issued, all unread messages in the topic are retrieved. The app remembers the last read message, so only updates will are in subsequent requests.
+Every time an GET is issued, all unread messages in the topic are retrieved. The app remembers the last read message, so only updates are retrieved in subsequent requests.
